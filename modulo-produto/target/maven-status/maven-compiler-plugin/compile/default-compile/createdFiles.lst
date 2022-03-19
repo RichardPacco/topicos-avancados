@@ -1,0 +1,4 @@
+senai\topicos\controller\ProdutoController.class
+senai\topicos\entidades\Produto.class
+senai\topicos\Main.class
+senai\topicos\swagger\SwaggerConfig.class
