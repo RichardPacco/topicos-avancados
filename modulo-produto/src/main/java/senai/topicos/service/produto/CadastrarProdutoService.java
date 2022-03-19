@@ -1,39 +1,30 @@
 package senai.topicos.service.produto;
 
-import java.time.Instant;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.springframework.stereotype.Service;
-
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import senai.topicos.domain.entity.Produto;
 import senai.topicos.dto.request.ProdutoDTO;
+import senai.topicos.repository.ProdutoRepository;
 import senai.topicos.validator.ProdutoValidator;
+
+import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
 public class CadastrarProdutoService {
 
     private final ProdutoValidator validator;
-
-    private final Map<Integer, Produto> produtoMap = new HashMap<>();
-    private Integer contador = 1;
+    private final ProdutoRepository repository;
 
     public Integer cadastrar(final ProdutoDTO produtoDTO) {
 
         validator.validate(produtoDTO);
 
-        Produto produtoEntity = new Produto();
-        produtoEntity.setPreco(produtoDTO.getPreco());
-        produtoEntity.setNome(produtoDTO.getNome());
-        produtoEntity.setData(Date.from(Instant.now()));
-        produtoEntity.setId(contador);
+        Produto produto = new Produto();
+        produto.setNome(produtoDTO.getNome());
+        produto.setPreco(produtoDTO.getPreco());
+        produto.setData(new Date());
 
-        produtoMap.put(produtoEntity.getId(), produtoEntity);
-        contador++;
-
-        return produtoEntity.getId();
+        return repository.save(produto);
     }
 }
