@@ -8,10 +8,11 @@ import lombok.Data;
 @Data
 public class ProdutoResponse {
 
-    public Integer id;
-    public Date data;
-    public String nome;
-    public BigDecimal preco;
+    private Integer id;
+    private Date data;
+    private String nome;
+    private BigDecimal preco;
+    private Integer quantidadeEstoque;
 
 
 }
