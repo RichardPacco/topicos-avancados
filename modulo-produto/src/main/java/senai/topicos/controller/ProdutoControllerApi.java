@@ -3,12 +3,12 @@ package senai.topicos.controller;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import senai.topicos.dto.request.ProdutoDTO;
+import senai.topicos.dto.request.ProdutoRequest;
 import senai.topicos.dto.response.ProdutoResponse;
 
 import java.util.List;
 
-@Api(tags = "Descreve a API") //TODO Editar
+@Api(tags = "API Produtos") //TODO Editar
 public interface ProdutoControllerApi {
 
     @ApiOperation(value = "Cadastra determinado produto.",
@@ -24,7 +24,7 @@ public interface ProdutoControllerApi {
     })
     Integer cadastrarProduto(
             @ApiParam(value = "descreve o parametro", required = true)
-            @RequestBody ProdutoDTO produtoDTO);
+            @RequestBody ProdutoRequest produtoRequest);
 
     ProdutoResponse listarProduto(@PathVariable("id") Integer id);
 

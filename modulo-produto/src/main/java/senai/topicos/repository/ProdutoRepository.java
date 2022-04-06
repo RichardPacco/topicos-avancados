@@ -23,7 +23,7 @@ public class ProdutoRepository {
         return new ArrayList<>(produtoMap.values());
     }
 
-    public Integer save(Produto produto) {
+    public Integer saveProduto(Produto produto) {
 
         produto.setId(contador);
 
@@ -36,4 +36,5 @@ public class ProdutoRepository {
     public void delete(Integer id) {
         produtoMap.remove(id);
     }
+
 }

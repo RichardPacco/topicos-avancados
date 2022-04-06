@@ -2,18 +2,18 @@ package senai.topicos.validator;
 
 import org.springframework.stereotype.Component;
 
-import senai.topicos.dto.request.ProdutoDTO;
+import senai.topicos.dto.request.ProdutoRequest;
 
 @Component
 public class ProdutoValidator {
 
-    public void validate(final ProdutoDTO produtoDTO) {
+    public void validate(final ProdutoRequest produtoRequest) {
 
-        if (produtoDTO.getNome() == null) {
+        if (produtoRequest.getNome() == null) {
             throw new RuntimeException("Nome Invalido");
         }
 
-        if (produtoDTO.getPreco() == null) {
+        if (produtoRequest.getPreco() == null) {
             throw new RuntimeException("Preço invalido");
         }
     }

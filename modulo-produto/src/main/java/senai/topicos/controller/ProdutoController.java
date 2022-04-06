@@ -3,9 +3,10 @@ package senai.topicos.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import senai.topicos.dto.request.ProdutoDTO;
+import senai.topicos.dto.request.ProdutoRequest;
 import senai.topicos.dto.response.ProdutoResponse;
 import senai.topicos.service.produto.CadastrarProdutoService;
+import senai.topicos.service.compra.ComprarProdutoService;
 import senai.topicos.service.produto.DeletarProdutoService;
 import senai.topicos.service.produto.ListarProdutoService;
 
@@ -20,6 +21,7 @@ public class ProdutoController implements ProdutoControllerApi {
     private final CadastrarProdutoService cadastrarProdutoService;
     private final ListarProdutoService listarProdutoService;
     private final DeletarProdutoService deletarProdutoService;
+    private final ComprarProdutoService comprarProdutoService;
 
     @GetMapping("listrar")
     public List<ProdutoResponse> listarTodos() {
@@ -37,8 +39,13 @@ public class ProdutoController implements ProdutoControllerApi {
     }
 
     @PostMapping("cadastrar")
-    public Integer cadastrarProduto(@RequestBody ProdutoDTO produtoDTO) {
-        return cadastrarProdutoService.cadastrar(produtoDTO);
+    public Integer cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {
+        return cadastrarProdutoService.cadastrar(produtoRequest);
     }
+
+//    @PostMapping("comprar")
+//    public Integer comprarProduto(@PathVariable("id") Integer id) {
+//        return comprarProdutoService.comprarProduto(new Compra());
+//    }
 }
 
