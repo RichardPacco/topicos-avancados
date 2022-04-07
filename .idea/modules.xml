@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/estoque/estoque.iml" filepath="$PROJECT_DIR$/estoque/estoque.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modulo-produto/modulo-produto.iml" filepath="$PROJECT_DIR$/modulo-produto/modulo-produto.iml" />
       <module fileurl="file://$PROJECT_DIR$/modulo-produto/modulo-usuario.iml" filepath="$PROJECT_DIR$/modulo-produto/modulo-usuario.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/topicos-avancados.iml" filepath="$PROJECT_DIR$/.idea/topicos-avancados.iml" />
     </modules>

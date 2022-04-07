@@ -1,20 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>br.com.mbs</groupId>
-  <artifactId>modulo-usuario</artifactId>
+  <artifactId>modulo-produto</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <camunda.spring-boot.version>7.16.0</camunda.spring-boot.version>
     <spring-boot.version>2.4.1</spring-boot.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
      <spring-cloud.version>2020.0.0</spring-cloud.version>
   </properties>
-  
+
    <dependencyManagement>
     <dependencies>
-     
+
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
@@ -22,19 +23,17 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      
+
        <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
-     
+
       </dependency>
-    </dependencies>     
+    </dependencies>
   </dependencyManagement>
-  
-  
 
     <dependencies>
     <dependency>
@@ -51,7 +50,7 @@
       <artifactId>jaxb-impl</artifactId>
       <version>2.3.5</version>
     </dependency>
-    
+
       <dependency>
 	    <groupId>io.springfox</groupId>
 	    <artifactId>springfox-swagger2</artifactId>
@@ -62,8 +61,8 @@
 	    <artifactId>springfox-swagger-ui</artifactId>
 	    <version>2.9.2</version>
 	</dependency>
-	
-	
+
+
 	<dependency>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -79,14 +78,18 @@
 	  <dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-batch</artifactId>
-			</dependency>     
+			</dependency>
 	<dependency>
 		<groupId>com.sun.mail</groupId>
 		<artifactId>javax.mail</artifactId>
 		<version>1.6.2</version>
 	</dependency>
-	
-  </dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+    </dependencies>
 
    <build>
     <plugins>
@@ -107,5 +110,5 @@
       </plugin>
     </plugins>
   </build>
-  
+
 </project>

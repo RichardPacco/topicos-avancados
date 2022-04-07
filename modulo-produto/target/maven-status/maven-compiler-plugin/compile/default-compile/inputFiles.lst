@@ -1,4 +1,14 @@
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\domain\entity\Compra.java
 E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\controller\ProdutoController.java
-E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\entidades\Produto.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\repository\ProdutoRepository.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\feign\EstoqueApi.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\ListarProdutoService.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\CadastrarProdutoService.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\validator\ProdutoValidator.java
 E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\swagger\SwaggerConfig.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\controller\ProdutoControllerApi.java
 E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\Main.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\domain\entity\Produto.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\dto\response\ProdutoResponse.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\dto\request\ProdutoRequest.java
+E:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\DeletarProdutoService.java

@@ -1,4 +1,14 @@
 senai\topicos\controller\ProdutoController.class
-senai\topicos\entidades\Produto.class
+senai\topicos\controller\ProdutoControllerApi.class
+senai\topicos\domain\entity\Compra.class
 senai\topicos\Main.class
+senai\topicos\repository\ProdutoRepository.class
+senai\topicos\feign\EstoqueApi.class
+senai\topicos\validator\ProdutoValidator.class
 senai\topicos\swagger\SwaggerConfig.class
+senai\topicos\domain\entity\Produto.class
+senai\topicos\dto\response\ProdutoResponse.class
+senai\topicos\service\produto\DeletarProdutoService.class
+senai\topicos\dto\request\ProdutoRequest.class
+senai\topicos\service\produto\CadastrarProdutoService.class
+senai\topicos\service\produto\ListarProdutoService.class
