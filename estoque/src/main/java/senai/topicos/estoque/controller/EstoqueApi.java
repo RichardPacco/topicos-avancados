@@ -1,9 +1,13 @@
 package senai.topicos.estoque.controller;
 
 import io.swagger.annotations.*;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import senai.topicos.estoque.dot.response.ProdutoResponse;
 import senai.topicos.estoque.dto.request.OrdemCompraRequest;
 import senai.topicos.estoque.dto.request.ProdutoRequest;
+
+import java.util.List;
 
 @Api(tags = "API Estoque") //TODO Editar
 public interface EstoqueApi {
@@ -23,5 +27,9 @@ public interface EstoqueApi {
 
     Integer cadastrarProduto(@RequestBody ProdutoRequest request);
 
-//    Integer comprarProduto(@RequestBody OrdemCompraRequest request);
+    ProdutoResponse listarEstoque(@PathVariable("id") Integer id);
+
+    List<ProdutoResponse> listarTodos();
+
+    void delete(Integer id);
 }

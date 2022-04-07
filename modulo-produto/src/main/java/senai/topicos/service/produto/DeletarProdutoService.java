@@ -2,15 +2,15 @@ package senai.topicos.service.produto;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import senai.topicos.repository.ProdutoRepository;
+import senai.topicos.feign.EstoqueApi;
 
 @Service
 @RequiredArgsConstructor
 public class DeletarProdutoService {
 
-    public final ProdutoRepository repository;
+    private final EstoqueApi feign;
 
-    public void delete(Integer id){
-        repository.delete(id);
+    public void delete(Integer id) {
+        feign.delete(id);
     }
 }
