@@ -1,4 +1,4 @@
-package senai.topicos.domain.entity;
+package senai.topicos.estoque.domain.entity;
 
 import lombok.Data;
 

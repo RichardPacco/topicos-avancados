@@ -3,6 +3,7 @@ package senai.topicos.controller;
 import io.swagger.annotations.*;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import senai.topicos.domain.entity.Compra;
 import senai.topicos.dto.request.ProdutoRequest;
 import senai.topicos.dto.response.ProdutoResponse;
 
@@ -32,6 +33,17 @@ public interface ProdutoControllerApi {
 
     void delete(Integer id);
 
+    Boolean comprarProduto(@PathVariable("id") Integer id,
+                           @PathVariable("qtd") Integer qtd);
+
+    Boolean verificar(@PathVariable("id") Integer id,
+                      @PathVariable("qtd") Integer qtd);
+
+    List<Compra> listarCompras();
 
 
+    Integer atualizar(@PathVariable Integer id,
+                      @PathVariable Integer qtd);
+
+    void gerarLoteCompras();
 }

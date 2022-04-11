@@ -3,7 +3,10 @@ package senai.topicos.estoque.repository;
 import org.springframework.stereotype.Component;
 import senai.topicos.estoque.domain.entity.Produto;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class EstoqueRepository {
@@ -13,10 +16,7 @@ public class EstoqueRepository {
 
     public Integer saveProduto(Produto produto) {
 
-        produto.setId(contador);
-
         estoqueMap.put(produto.getId(), produto);
-        contador++;
 
         return produto.getId();
     }

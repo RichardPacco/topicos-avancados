@@ -4,13 +4,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import senai.topicos.feign.FeignEstoqueApi;
 
-@Service
 @RequiredArgsConstructor
-public class DeletarProdutoService {
+@Service
+public class ComprarProdutoService {
 
-    private final FeignEstoqueApi feign;
+    private final FeignEstoqueApi feignEstoqueApi;
 
-    public void delete(Integer id) {
-        feign.delete(id);
+    public Boolean comprar(Integer id, Integer qtd) {
+
+        return feignEstoqueApi.comprar(id, qtd);
+
     }
 }

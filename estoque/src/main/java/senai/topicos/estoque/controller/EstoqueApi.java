@@ -1,10 +1,13 @@
 package senai.topicos.estoque.controller;
 
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import senai.topicos.estoque.domain.entity.Compra;
 import senai.topicos.estoque.dot.response.ProdutoResponse;
-import senai.topicos.estoque.dto.request.OrdemCompraRequest;
 import senai.topicos.estoque.dto.request.ProdutoRequest;
 
 import java.util.List;
@@ -24,7 +27,6 @@ public interface EstoqueApi {
             @ApiResponse(code = 500, message = "Falha inesperada."),
             @ApiResponse(code = 501, message = "Serviço indisponível.")
     })
-
     Integer cadastrarProduto(@RequestBody ProdutoRequest request);
 
     ProdutoResponse listarEstoque(@PathVariable("id") Integer id);
@@ -32,4 +34,17 @@ public interface EstoqueApi {
     List<ProdutoResponse> listarTodos();
 
     void delete(Integer id);
+
+    Boolean comprar(@PathVariable("id") Integer id,
+                    @PathVariable("qtd") Integer qtd);
+
+    Boolean verificar(@PathVariable Integer id,
+                      @PathVariable Integer qtd);
+
+    List<Compra> listarCompras();
+
+    Integer atualizar(@PathVariable Integer id,
+                      @PathVariable Integer qtd);
+
+    void gerarLoteCompras();
 }

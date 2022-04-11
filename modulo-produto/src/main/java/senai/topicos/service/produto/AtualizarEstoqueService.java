@@ -6,11 +6,11 @@ import senai.topicos.feign.FeignEstoqueApi;
 
 @Service
 @RequiredArgsConstructor
-public class DeletarProdutoService {
+public class AtualizarEstoqueService {
 
-    private final FeignEstoqueApi feign;
+    private final FeignEstoqueApi feignEstoqueApi;
 
-    public void delete(Integer id) {
-        feign.delete(id);
+    public Integer atualizar(Integer id, Integer qtd) {
+        return feignEstoqueApi.atualizar(id, qtd);
     }
 }

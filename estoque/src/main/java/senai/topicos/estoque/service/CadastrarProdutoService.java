@@ -13,14 +13,17 @@ import java.util.Date;
 public class CadastrarProdutoService {
 
     private final EstoqueRepository repository;
+    private Integer contador = 1;
 
     public Integer cadastrar(final ProdutoRequest produtoRequest) {
 
         Produto produto = new Produto();
         produto.setNome(produtoRequest.getNome());
         produto.setPreco(produtoRequest.getPreco());
-        produto.setData(new Date());
+        produto.setDataCadastro(new Date());
         produto.setQuantidadeEstoque(produtoRequest.getQuantidadeEstoque());
+        produto.setId(contador);
+        contador++;
 
         return repository.saveProduto(produto);
     }

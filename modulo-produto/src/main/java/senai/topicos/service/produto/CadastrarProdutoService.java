@@ -3,7 +3,7 @@ package senai.topicos.service.produto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import senai.topicos.dto.request.ProdutoRequest;
-import senai.topicos.feign.EstoqueApi;
+import senai.topicos.feign.FeignEstoqueApi;
 import senai.topicos.validator.ProdutoValidator;
 
 @Service
@@ -11,7 +11,7 @@ import senai.topicos.validator.ProdutoValidator;
 public class CadastrarProdutoService {
 
     private final ProdutoValidator validator;
-    private final EstoqueApi feign;
+    private final FeignEstoqueApi feign;
 
     public Integer cadastrar(final ProdutoRequest produtoRequest) {
 

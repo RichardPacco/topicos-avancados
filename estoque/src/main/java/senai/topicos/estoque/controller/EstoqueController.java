@@ -2,13 +2,10 @@ package senai.topicos.estoque.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import senai.topicos.estoque.domain.entity.Compra;
 import senai.topicos.estoque.dot.response.ProdutoResponse;
-import senai.topicos.estoque.dto.request.OrdemCompraRequest;
 import senai.topicos.estoque.dto.request.ProdutoRequest;
-import senai.topicos.estoque.service.CadastrarProdutoService;
-import senai.topicos.estoque.service.ComprarProdutoService;
-import senai.topicos.estoque.service.DeletarEstoqueService;
-import senai.topicos.estoque.service.ListarEstoqueService;
+import senai.topicos.estoque.service.*;
 
 import java.util.List;
 
@@ -21,6 +18,10 @@ public class EstoqueController implements EstoqueApi{
     private final CadastrarProdutoService cadastrarProdutoService;
     private final ListarEstoqueService listarEstoqueService;
     private final DeletarEstoqueService deletarEstoqueService;
+    private final VerificarEstoqueService verificarEstoqueService;
+    private final ListarComprasService listarComprasService;
+    private final AtualizarEstoqueService atualizarEstoqueService;
+    private final GeraLoteService geraLoteService;
 
     @PostMapping("cadastrar")
     public Integer cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {
@@ -37,9 +38,33 @@ public class EstoqueController implements EstoqueApi{
         deletarEstoqueService.delete(id);
     }
 
+    @PutMapping("comprar/{id}/{qtd}")
+    public Boolean comprar(@PathVariable Integer id, @PathVariable Integer qtd) {
+        return comprarProdutoService.comprar(id, qtd);
+    }
+
     @GetMapping("{id}")
     public ProdutoResponse listarEstoque(@PathVariable("id") Integer id) {
         return listarEstoqueService.listar(id);
     }
 
+    @GetMapping("verificar/{id}/{qtd}")
+    public Boolean verificar(@PathVariable Integer id, @PathVariable Integer qtd) {
+        return verificarEstoqueService.verificar(id, qtd);
+    }
+
+    @GetMapping("listarCompras")
+    public List<Compra> listarCompras(){
+        return listarComprasService.listar();
+    }
+
+    @PutMapping("atualizar/{id}/{qtd}")
+    public Integer atualizar(@PathVariable Integer id, @PathVariable Integer qtd) {
+        return atualizarEstoqueService.atualizar(id, qtd);
+    }
+
+    @PostMapping("loteCompras")
+    public void gerarLoteCompras(){
+        geraLoteService.gerarLote();
+    }
 }

@@ -10,14 +10,10 @@ import java.util.Date;
 public class Produto {
 
     private Integer id;
-    private Date data;
+    private Date dataCadastro;
     private String nome;
     private BigDecimal preco;
     private Integer quantidadeEstoque;
 
-    @Override
-    public String toString() {
-        return "Produto [id = " + id + ", data = " + data + ", nome = " + nome + ", preco = " + preco + "]";
-    }
-
+    
 }

@@ -20,7 +20,7 @@ public class ListarEstoqueService {
         final Produto prod = repository.findById(id);
 
         ProdutoResponse produtoResponse = new ProdutoResponse();
-        produtoResponse.setData(prod.getData());
+        produtoResponse.setData(prod.getDataCadastro());
         produtoResponse.setId(prod.getId());
         produtoResponse.setNome(prod.getNome());
         produtoResponse.setPreco(prod.getPreco());
@@ -37,7 +37,7 @@ public class ListarEstoqueService {
 
         listaProd.forEach(produto -> {
             ProdutoResponse produtoResponse = new ProdutoResponse();
-            produtoResponse.setData(produto.getData());
+            produtoResponse.setData(produto.getDataCadastro());
             produtoResponse.setId(produto.getId());
             produtoResponse.setNome(produto.getNome());
             produtoResponse.setPreco(produto.getPreco());
@@ -48,4 +48,6 @@ public class ListarEstoqueService {
 
         return produtosResponse;
     }
+
+
 }
