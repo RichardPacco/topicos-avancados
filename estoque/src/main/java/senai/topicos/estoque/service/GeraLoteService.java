@@ -17,8 +17,9 @@ public class GeraLoteService {
     private final CompraRepository repository;
 
     public void gerarLote() {
+        //TODO adicionar Job para criar arquivo automaticamente todo a meia noite, após impleentação do DB
         List<Compra> compras = repository.listarCompras();
-        String path = "E:\\listaDeCompras.txt";
+        String path = "D:\\listaDeCompras.txt";
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
             for (Compra compra : compras) {

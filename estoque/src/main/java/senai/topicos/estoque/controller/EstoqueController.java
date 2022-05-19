@@ -1,6 +1,15 @@
 package senai.topicos.estoque.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
+import org.springframework.batch.core.JobParametersBuilder;
+import org.springframework.batch.core.JobParametersInvalidException;
+import org.springframework.batch.core.launch.JobLauncher;
+import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
+import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
+import org.springframework.batch.core.repository.JobRestartException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import senai.topicos.estoque.domain.entity.Compra;
 import senai.topicos.estoque.dot.response.ProdutoResponse;
@@ -12,7 +21,13 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/v1/estoque") //TODO v1 explicar
-public class EstoqueController implements EstoqueApi{
+public class EstoqueController implements EstoqueApi {
+
+    @Autowired
+    private JobLauncher jobLauncher;
+
+    @Autowired
+    private Job processJob;
 
     private final ComprarProdutoService comprarProdutoService;
     private final CadastrarProdutoService cadastrarProdutoService;
@@ -39,8 +54,7 @@ public class EstoqueController implements EstoqueApi{
     }
 
     @PutMapping("comprar/{id}/{qtd}")
-    public Boolean comprar(@PathVariable Integer id, @PathVariable Integer qtd) {
-        return comprarProdutoService.comprar(id, qtd);
+    public Boolean comprar(@PathVariable Integer id, @PathVariable Integer qtd){ return comprarProdutoService.comprar(id, qtd);
     }
 
     @GetMapping("{id}")
@@ -54,7 +68,7 @@ public class EstoqueController implements EstoqueApi{
     }
 
     @GetMapping("listarCompras")
-    public List<Compra> listarCompras(){
+    public List<Compra> listarCompras() {
         return listarComprasService.listar();
     }
 
@@ -64,7 +78,10 @@ public class EstoqueController implements EstoqueApi{
     }
 
     @PostMapping("loteCompras")
-    public void gerarLoteCompras(){
-        geraLoteService.gerarLote();
+    public void gerarLoteCompras() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
+        JobParameters jobParameters = new JobParametersBuilder()
+                .addLong("time", System.currentTimeMillis())
+                .toJobParameters();
+        jobLauncher.run(processJob, jobParameters);
     }
 }

@@ -8,8 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="modulo-usuario" />
-        <module name="modulo-produto" />
         <module name="estoque" />
+        <module name="modulo-produto" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

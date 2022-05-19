@@ -40,5 +40,6 @@ public interface FeignEstoqueApi {
 
     @PostMapping("loteCompras")
     void gerarLoteCompras();
+
 }
 

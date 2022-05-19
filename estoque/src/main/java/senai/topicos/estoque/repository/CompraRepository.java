@@ -8,13 +8,14 @@ import java.util.List;
 
 @Component
 public class CompraRepository {
-
+    //TODO Alterar para crud repository quando tiver DB
     private final List<Compra> compras = new ArrayList<>();
 
-    public List<Compra> listarCompras(){
+    public List<Compra> listarCompras() {
         return compras;
     }
-    public void add(Compra compra){
+
+    public void add(Compra compra) {
         compras.add(compra);
     }
 

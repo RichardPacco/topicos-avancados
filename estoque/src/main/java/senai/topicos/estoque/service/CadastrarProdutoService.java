@@ -16,7 +16,8 @@ public class CadastrarProdutoService {
     private Integer contador = 1;
 
     public Integer cadastrar(final ProdutoRequest produtoRequest) {
-
+//TODO criar mapper
+        //TODO formatar as datas onde necessário
         Produto produto = new Produto();
         produto.setNome(produtoRequest.getNome());
         produto.setPreco(produtoRequest.getPreco());

@@ -10,7 +10,7 @@ import java.util.Map;
 
 @Component
 public class EstoqueRepository {
-
+    //TODO Alterar para crud repository quando tiver DB
     private final Map<Integer, Produto> estoqueMap = new HashMap<>();
     private Integer contador = 1;
 
