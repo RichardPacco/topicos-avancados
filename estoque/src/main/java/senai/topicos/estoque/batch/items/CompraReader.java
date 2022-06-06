@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class CompraReader implements ItemReader<Compra> {
 
 
-    File file = new File("E:\\Downloads\\topicos-avancados\\LoteComprasOld.txt");
+    File file = new File("LoteComprasOld.txt");
 
     @Autowired
     private CompraRepository compraRepository;
@@ -28,9 +28,9 @@ public class CompraReader implements ItemReader<Compra> {
 
     @PostConstruct
     public void postConstruct() throws IOException {
-        File file2 = new File("E:\\Downloads\\topicos-avancados\\LoteCompras.txt");
+        File file2 = new File("LoteCompras.txt");
         if (file2.exists()) {
-            Files.copy(file2.toPath(), Paths.get("E:\\Downloads\\topicos-avancados\\LoteComprasBackup.txt"), StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(file2.toPath(), Paths.get("LoteComprasBackup.txt"), StandardCopyOption.REPLACE_EXISTING);
         }
     }
 
@@ -46,7 +46,7 @@ public class CompraReader implements ItemReader<Compra> {
             return compraRetorno = it.next();
         }
         compraRetorno = null;
-        Files.copy(file.toPath(), Paths.get("E:\\Downloads\\topicos-avancados\\LoteCompras.txt"), StandardCopyOption.REPLACE_EXISTING);
+        Files.copy(file.toPath(), Paths.get("LoteCompras.txt"), StandardCopyOption.REPLACE_EXISTING);
         file.delete();
         return compraRetorno;
     }
