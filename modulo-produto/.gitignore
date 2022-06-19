@@ -3,6 +3,10 @@ target/
 src/database/log
 src/database/lib
 
+*/target/*
+*/target/**
+/target/**
+
 ### VSCode ###
 .vscode
 .sts4-cache
@@ -16,7 +20,7 @@ src/database/lib
 .springBeans
 
 ### IntelliJ IDEA ###
-.idea
+.idea/*
 *.iws
 *.iml
 *.ipr
