@@ -1,4 +1,5 @@
 target/
+*/target/*
 .mvn/
 src/database/log
 src/database/lib
