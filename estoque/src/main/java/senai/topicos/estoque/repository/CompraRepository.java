@@ -10,6 +10,4 @@ public interface CompraRepository extends JpaRepository<Compra, Long> {
     List<Compra> findAll();
 
     Compra save(Compra compra);
-
-
 }

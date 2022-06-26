@@ -15,6 +15,5 @@ public class VerificarEstoqueService {
         Produto prod = repository.findById(id);
         int kubanakan = prod.getQuantidadeEstoque() - qtd;
         return kubanakan >= 0;
-
     }
 }
