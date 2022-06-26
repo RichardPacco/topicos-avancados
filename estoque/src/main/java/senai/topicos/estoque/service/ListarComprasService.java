@@ -16,13 +16,13 @@ public class ListarComprasService {
     private final CompraRepository repository;
 
     public List<Compra> listar() {
-        return repository.listarCompras();
+        return repository.findAll();
     }
 
     public List<Compra> listarComprasEspecificas() {
 
         List<Compra> comprasAcima10 = new ArrayList<>();
-        List<Compra> compras = repository.listarCompras();
+        List<Compra> compras = repository.findAll();
 
         BigDecimal valorComparar = new BigDecimal(10);
         compras.forEach(compra -> {

@@ -33,7 +33,7 @@ public class ComprarProdutoService {
             return false;
         }
         prod.setQuantidadeEstoque(quantidadeRestante);
-        repository.saveProduto(prod);
+        repository.save(prod);
 
         registrarCompra(qtd, prod);
 
@@ -44,12 +44,11 @@ public class ComprarProdutoService {
         Compra compra = new Compra();
         compra.setNomeProduto(prod.getNome());
         compra.setQuantidade(qtd);
-        compra.setDataVenda(new Date());
         compra.setPrecoUnidade(prod.getPreco());
 
         BigDecimal valorTotal = prod.getPreco().multiply(BigDecimal.valueOf(qtd));
         compra.setValorTotal(valorTotal);
 
-        compraRepository.add(compra);
+        compraRepository.save(compra);
         }
     }

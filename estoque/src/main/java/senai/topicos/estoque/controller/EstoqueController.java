@@ -12,7 +12,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import senai.topicos.estoque.domain.entity.Compra;
-import senai.topicos.estoque.dot.response.ProdutoResponse;
+import senai.topicos.estoque.dto.response.ProdutoResponse;
 import senai.topicos.estoque.dto.request.ProdutoRequest;
 import senai.topicos.estoque.service.*;
 
@@ -36,7 +36,6 @@ public class EstoqueController implements EstoqueApi {
     private final VerificarEstoqueService verificarEstoqueService;
     private final ListarComprasService listarComprasService;
     private final AtualizarEstoqueService atualizarEstoqueService;
-    private final GeraLoteService geraLoteService;
 
     @PostMapping("cadastrar")
     public Integer cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {

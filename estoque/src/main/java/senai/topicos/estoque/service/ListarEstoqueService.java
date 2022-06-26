@@ -3,7 +3,7 @@ package senai.topicos.estoque.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import senai.topicos.estoque.domain.entity.Produto;
-import senai.topicos.estoque.dot.response.ProdutoResponse;
+import senai.topicos.estoque.dto.response.ProdutoResponse;
 import senai.topicos.estoque.repository.EstoqueRepository;
 
 import java.util.ArrayList;

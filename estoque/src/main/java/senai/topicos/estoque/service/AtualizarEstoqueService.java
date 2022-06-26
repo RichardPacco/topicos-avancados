@@ -16,7 +16,8 @@ public class AtualizarEstoqueService {
         Produto prod = repository.findById(id);
         Integer acrescentado = prod.getQuantidadeEstoque() + qtd;
         prod.setQuantidadeEstoque(acrescentado);
+        repository.save(prod);
 
-        return repository.saveProduto(prod);
+        return prod.getQuantidadeEstoque();
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import senai.topicos.estoque.domain.entity.Compra;
-import senai.topicos.estoque.dot.response.ProdutoResponse;
+import senai.topicos.estoque.dto.response.ProdutoResponse;
 import senai.topicos.estoque.dto.request.ProdutoRequest;
 
 import java.util.List;

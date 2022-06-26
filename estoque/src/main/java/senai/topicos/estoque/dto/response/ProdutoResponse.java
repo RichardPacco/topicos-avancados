@@ -1,4 +1,4 @@
-package senai.topicos.estoque.dot.response;
+package senai.topicos.estoque.dto.response;
 
 import lombok.Data;
 

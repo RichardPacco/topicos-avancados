@@ -1,23 +1,15 @@
 package senai.topicos.estoque.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
 import senai.topicos.estoque.domain.entity.Compra;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Component
-public class CompraRepository {
-    //TODO Alterar para crud repository quando tiver DB
-    private final List<Compra> compras = new ArrayList<>();
+public interface CompraRepository extends JpaRepository<Compra, Long> {
 
-    public List<Compra> listarCompras() {
-        return compras;
-    }
+    List<Compra> findAll();
 
-    public void add(Compra compra) {
-        compras.add(compra);
-    }
+    Compra save(Compra compra);
 
 
 }

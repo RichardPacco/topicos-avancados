@@ -11,6 +11,6 @@ public class DeletarEstoqueService {
     private final EstoqueRepository repository;
 
     public void delete(Integer id){
-        repository.delete(id);
+        repository.deleteById(id);
     }
 }

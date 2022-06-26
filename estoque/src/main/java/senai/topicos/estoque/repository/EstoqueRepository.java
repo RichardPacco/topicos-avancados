@@ -1,35 +1,17 @@
 package senai.topicos.estoque.repository;
 
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
 import senai.topicos.estoque.domain.entity.Produto;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-@Component
-public class EstoqueRepository {
-    //TODO Alterar para crud repository quando tiver DB
-    private final Map<Integer, Produto> estoqueMap = new HashMap<>();
-    private Integer contador = 1;
+public interface EstoqueRepository extends JpaRepository<Produto, Long> {
 
-    public Integer saveProduto(Produto produto) {
+    Produto save(Produto produto);
 
-        estoqueMap.put(produto.getId(), produto);
+    Produto findById(Integer id);
 
-        return produto.getId();
-    }
+    List<Produto> findAll();
 
-    public Produto findById(Integer id) {
-        return estoqueMap.get(id);
-    }
-
-    public List<Produto> findAll() {
-        return new ArrayList<>(estoqueMap.values());
-    }
-
-    public void delete(Integer id) {
-        estoqueMap.remove(id);
-    }
+    void deleteById(Integer id);
 }

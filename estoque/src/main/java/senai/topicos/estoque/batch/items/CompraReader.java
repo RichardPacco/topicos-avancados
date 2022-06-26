@@ -39,7 +39,7 @@ public class CompraReader implements ItemReader<Compra> {
         System.out.println("Reader");
 
         if (compraRetorno == null) {
-            it = compraRepository.listarCompras().iterator();
+            it = compraRepository.findAll().iterator();
         }
 
         while (it.hasNext()) {
