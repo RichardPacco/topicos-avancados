@@ -9,25 +9,18 @@ import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
 import org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException;
 import org.springframework.batch.core.repository.JobRestartException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import senai.topicos.estoque.domain.entity.Compra;
-import senai.topicos.estoque.dto.response.ProdutoResponse;
 import senai.topicos.estoque.dto.request.ProdutoRequest;
+import senai.topicos.estoque.dto.response.ProdutoResponse;
 import senai.topicos.estoque.service.*;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/v1/estoque") //TODO v1 explicar
+@RequestMapping("/v1/estoque")
 public class EstoqueController implements EstoqueApi {
-
-    @Autowired
-    private JobLauncher jobLauncher;
-
-    @Autowired
-    private Job processJob;
 
     private final ComprarProdutoService comprarProdutoService;
     private final CadastrarProdutoService cadastrarProdutoService;
@@ -36,6 +29,8 @@ public class EstoqueController implements EstoqueApi {
     private final VerificarEstoqueService verificarEstoqueService;
     private final ListarComprasService listarComprasService;
     private final AtualizarEstoqueService atualizarEstoqueService;
+    private final JobLauncher jobLauncher;
+    private final Job processJob;
 
     @PostMapping("cadastrar")
     public Integer cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {
@@ -53,7 +48,8 @@ public class EstoqueController implements EstoqueApi {
     }
 
     @PutMapping("comprar/{id}/{qtd}")
-    public Boolean comprar(@PathVariable Integer id, @PathVariable Integer qtd){ return comprarProdutoService.comprar(id, qtd);
+    public Boolean comprar(@PathVariable Integer id, @PathVariable Integer qtd) {
+        return comprarProdutoService.comprar(id, qtd);
     }
 
     @GetMapping("{id}")

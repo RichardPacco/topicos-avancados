@@ -1,4 +1,6 @@
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\domain\entity\Produto.java
+D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\dto\response\ErrorResponse.java
+D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\interceptor\ControllerExceptionInterceptor.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\dto\request\ProdutoRequest.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\ListarProdutoService.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\VerificarEstoqueService.java
@@ -9,6 +11,7 @@ D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\valida
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\dto\response\ProdutoResponse.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\AtualizarEstoqueService.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\ListarComprasService.java
+D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\exception\GenericException.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\ProdutoApplication.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\controller\ProdutoControllerApi.java
 D:\Downloads\topicos-avancados\modulo-produto\src\main\java\senai\topicos\service\produto\CadastrarProdutoService.java

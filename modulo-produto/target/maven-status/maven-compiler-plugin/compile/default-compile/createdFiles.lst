@@ -7,13 +7,16 @@ senai\topicos\repository\ProdutoRepository.class
 senai\topicos\service\produto\ComprarProdutoService.class
 senai\topicos\validator\ProdutoValidator.class
 senai\topicos\swagger\SwaggerConfig.class
+senai\topicos\dto\response\ErrorResponse.class
 senai\topicos\feign\FeignEstoqueApi.class
 senai\topicos\domain\entity\Produto.class
 senai\topicos\dto\response\ProdutoResponse.class
 senai\topicos\service\produto\ListarComprasService.class
 senai\topicos\service\produto\AtualizarEstoqueService.class
 senai\topicos\service\produto\GeraLoteService.class
+senai\topicos\interceptor\ControllerExceptionInterceptor.class
 senai\topicos\service\produto\DeletarProdutoService.class
+senai\topicos\exception\GenericException.class
 senai\topicos\dto\request\ProdutoRequest.class
 senai\topicos\service\produto\CadastrarProdutoService.class
 senai\topicos\service\produto\ListarProdutoService.class
