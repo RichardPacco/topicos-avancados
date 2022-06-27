@@ -16,7 +16,7 @@ public class ControllerExceptionInterceptor {
         ErrorResponse error = new ErrorResponse();
         error.setMessage(ex.getMessage());
         error.setStatus(ex.getHttpStatus());
-        log.error("erro inesperado: {}", ex.getMessage());
+        log.error("Ocorreu um erro: {}", ex.getMessage());
         return new ResponseEntity<>(error, ex.getHttpStatus());
     }
 
