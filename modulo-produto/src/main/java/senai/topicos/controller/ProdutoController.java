@@ -10,6 +10,8 @@ import senai.topicos.service.produto.*;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -41,7 +43,7 @@ public class ProdutoController implements ProdutoControllerApi {
     }
 
     @PostMapping("cadastrar")
-    public Integer cadastrarProduto(@RequestBody ProdutoRequest produtoRequest) {
+    public Integer cadastrarProduto(@Valid @RequestBody ProdutoRequest produtoRequest) {
         return cadastrarProdutoService.cadastrar(produtoRequest);
     }
 
