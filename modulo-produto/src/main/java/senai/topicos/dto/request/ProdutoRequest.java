@@ -1,8 +1,8 @@
 package senai.topicos.dto.request;
 
-import java.math.BigDecimal;
-
 import lombok.Data;
+
+import java.math.BigDecimal;
 
 @Data
 public class ProdutoRequest {

@@ -57,7 +57,7 @@ public class ProdutoController implements ProdutoControllerApi {
     }
 
     @GetMapping("listarCompras")
-    public List<Compra> listarCompras(){
+    public List<Compra> listarCompras() {
         return listarComprasService.listarCompras();
     }
 
@@ -67,7 +67,7 @@ public class ProdutoController implements ProdutoControllerApi {
     }
 
     @PostMapping("loteCompras")
-    public void gerarLoteCompras(){
+    public void gerarLoteCompras() {
         geraLoteService.geraLoteCompras();
     }
 }
