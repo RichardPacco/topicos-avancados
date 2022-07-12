@@ -9,11 +9,13 @@ import javax.validation.constraints.NotNull;
 @Data
 public class ProdutoRequest {
 
-    @NotNull(message = "{name.notnull}")
+    @NotNull(message = "{name.not.null}")
     private String nome;
-//TODO Arrumar esta classe
-    @NotNull(message = "{test.message}")
+
+    @NotNull(message = "{preco.not.null}")
     private BigDecimal preco;
+
+    @NotNull(message = "{quantidade.estoque.not.null}")
     private Integer quantidadeEstoque;
 
 }
